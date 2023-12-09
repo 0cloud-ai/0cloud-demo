@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-name
+  labels:
+    key: value
+  annotations:
+    key: value
+spec:
+  podCIDR: 192.168.0.0/24
+  podCIDRs:
+    - 192.168.0.0/24
+  providerID: provider-specific-identifier
+status:
+  addresses:
+    - type: InternalIP
+      address: 192.168.1.1
+    - type: Hostname
+      address: node-name
+  allocatable:
+    cpu: "4"
+    memory: 8Gi
+    pods: "40"
+  capacity:
+    cpu: "4"
+    memory: 8Gi
+    pods: "40"
+  conditions:
+    - type: Ready
+      status: "True"
+  nodeInfo:
+    architecture: amd64
+    osImage: Operating System Image
+    kubeletVersion: v1.20.0
+    containerRuntimeVersion: docker://19.3.12
